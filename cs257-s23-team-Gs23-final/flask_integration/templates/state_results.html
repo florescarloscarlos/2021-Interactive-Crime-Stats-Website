@@ -1,0 +1,214 @@
+<html lang="en"> 
+
+<head>
+<title>All About Crime Data</title>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'state_results.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'home.css')}}"/>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename= 'nav_and_styling.css')}}"/>
+
+<!-- plotly-->
+<script src='https://cdn.plot.ly/plotly-2.20.0.min.js'></script>
+</head>
+
+<body>
+<header class = "main_header">
+    <h1>2021 US Crime Explorer</h1>
+
+    <nav class ="horizontal_nav">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#minnesota">Minnesota Data</a></li>
+        <li><a href="/about">About the Data</a></li>
+        <input type="text" placeholder="Search for a city or state...">
+    </ul>
+    </nav>
+</header>
+
+
+<div class="notable_locations">
+    <h3 class="section_title">Notable Locations</h2>
+    <ul>
+        <li><a href="#Colorado">Lakeside, CO</a> is the city with the highest number of offenses per person in the US</li>
+        <li><a href="#Alaska">Skagway, AL</a>, along with over 100 other cities, had 0 violent or property offenses occur in 2021</li>
+    </ul>
+    <h3 class="section_title">What can our data tell us?</h2>
+        <ul>
+            <li>the crime rate of a specific location</li>
+            <li>the most/least dangerous areas on the city, state, or US level by crime rate</li>
+            <li>the <a href="/about#dataset">types of crimes</a> being committed (and how often) in a specific location </li>
+            <li>the weapons and demographic (age, ethnicity, race, sex) statistics of Minnesota <a href="/about#minnesota">(Why?)</a></li>
+        </ul>
+</div>
+
+
+
+<div class="vertical_nav">
+    <ul>
+        <li><a href="#Alabama">Alabama</a></li>
+        <li><a href="#Alaska">Alaska</a></li>
+        <li><a href="#Arizona">Arizona</a></li>
+        <li><a href="#Arkansas">Arkansas</a></li>
+        <li><a href="#California">California</a></li>
+        <li><a href="#Colorado">Colorado</a></li>
+        <li><a href="#Connecticut">Connecticut</a></li>
+        <li><a href="#Delaware">Delaware</a></li>
+        <li><a href="#Florida">Florida</a></li>
+        <li><a href="#Georgia">Georgia</a></li>
+        <li><a href="#Hawaii">Hawaii</a></li>
+        <li><a href="#Idaho">Idaho</a></li>
+        <li><a href="#Illinois">Illinois</a></li>
+        <li><a href="#Indiana">Indiana</a></li>
+        <li><a href="#Iowa">Iowa</a></li>
+        <li><a href="#Kansas">Kansas</a></li>
+        <li><a href="#Kentucky">Kentucky</a></li>
+        <li><a href="#Louisiana">Louisiana</a></li>
+        <li><a href="#Maine">Maine</a></li>
+        <li><a href="#Maryland">Maryland</a></li>
+        <li><a href="#Massachusetts">Massachusetts</a></li>
+        <li><a href="#Michigan">Michigan</a></li>
+        <li><a href="#Minnesota">Minnesota</a></li>
+        <li><a href="#Mississippi">Mississippi</a></li>
+        <li><a href="#Missouri">Missouri</a></li>
+        <li><a href="#Montana">Montana</a></li>
+        <li><a href="#Nebraska">Nebraska</a></li>
+        <li><a href="#Nevada">Nevada</a></li>
+        <li><a href="#NewHampshire">New Hampshire</a></li>
+        <li><a href="#NewJersey">New Jersey</a></li>
+        <li><a href="#NewMexico">New Mexico</a></li>
+        <li><a href="#NewYork">New York</a></li>
+        <li><a href="#NorthCarolina">North Carolina</a></li>
+        <li><a href="#NorthDakota">North Dakota</a></li>
+        <li><a href="#Ohio">Ohio</a></li>
+        <li><a href="#Oklahoma">Oklahoma</a></li>
+        <li><a href="#Oregon">Oregon</a></li>
+        <li><a href="#Pennsylvania">Pennsylvania</a></li>
+        <li><a href="#RhodeIsland">Rhode Island</a></li>
+        <li><a href="#SouthCarolina">South Carolina</a></li>
+        <li><a href="#SouthDakota">South Dakota</a></li>
+        <li><a href="#Tennessee">Tennessee</a></li>
+        <li><a href="#Texas">Texas</a></li>
+        <li><a href="#Utah">Utah</a></li>
+        <li><a href="#Vermont">Vermont</a></li>
+        <li><a href="#Virginia">Virginia</a></li>
+        <li><a href="#Washington">Washington</a></li>
+        <li><a href="#WestVirginia">West Virginia</a></li>
+        <li><a href="#Wisconsin">Wisconsin</a></li>
+        <li><a href="#Wyoming">Wyoming</a></li>
+    </ul>
+</div>
+
+
+<figure>
+    <h3 class="heading"> 2021 Crime Map: Explore the 2021 Crime Statistics of Cities and States</h3>
+    <div class="embed-container"><iframe width="990" height="590" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="US Crime Map" src= "{{ US_map }}" ></iframe></div>
+</figure>
+
+
+
+
+<div class="grid-container">
+    <div class="left">
+
+        <h2 class="results_title"> <a id= "results">{{ state }}:</a> <input class="city_search" type="text" placeholder="Search for a city in Iowa..."> </h2>
+
+        <h3 class="section_title">Heat Map of Crime in {{ state }}:</h3>
+
+        <div class="embed-container"><iframe width="500" height="445" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="US Crime Map" src= "{{ heat_map_url }}" ></iframe></div>
+
+            <h3 class="left_section_title">Highest Crime Rate in {{ state }}: {{ city_highest_CR }}</h3>
+            <div class="google-map">
+                <iframe src="{{ highest_CR_map }}" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            </div>
+            <h3 class="left_section_title">Lowest Crime Rate in {{ state }}: {{ city_lowest_CR }}</h3>
+            <div class="google-map">
+                <iframe src="{{ lowest_CR_map }}" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            
+            </div>
+        <a href="#top" class="return_button">Back to the top</a>
+
+    </div>
+
+
+    <div class="right">
+        <h3 class="section_title">{{ state }} Crime Statistics:</h3>
+
+        <ul>
+            <li>Crime Rate: {{ state_CR }} crimes per person in 2021</li>
+            <li>Ranking: {{ state_ranking }} out of 47* states (Where rank 1 is the highest crime rate; see <a href="/about">About The Data</a> for more info)</li>
+        </ul>
+
+    <div id = "prop_chart" class="bar_chart"></div>
+        <script>
+        var property_counts = {{property_crime_counts|tojson}}
+        var data = [{
+            y: property_counts,
+            x: ['Burglary','Larceny theft','Motor Vehicle theft','Arson'],
+            automargin: true,
+            type: 'bar'
+        }];
+
+        var layout = {
+            title:"<b>Property Crime by Type</b>",
+            height:450,
+            width:450,
+            showlegend: false,
+            paper_bgcolor:"#f5f5f5",
+        };
+        var config = {
+            displayModeBar: false,
+        };
+        Plotly.newPlot('prop_chart', data, layout, config);
+        </script>
+
+        <div id="violent_chart" class="bar_chart"></div>
+            <script>
+                var violent_counts = {{violent_crime_counts|tojson}}
+                var data = [{
+                    y: violent_counts,
+                    x: ['Murder and NNM', 'Rape', 'Robbery', 'Aggravated Assault'],
+                    automargin: true,
+                    type: 'bar'
+                }];
+
+                var layout = {
+                    title:"<b>Violent Crime by Type</b>",                
+                    height:450,
+                    width:450,
+                    showlegend: false,
+                    paper_bgcolor:"#f5f5f5",
+                    plot_bgcolor: "#f2f2f2",
+                };
+                var config = {
+                    displayModeBar: false,
+                };                
+                Plotly.newPlot('violent_chart', data, layout, config);
+            </script>
+
+        <div id="pie" class="pie_chart"></div>
+            <script> 
+                var counts = {{crime_type_values|tojson}}           
+                var data = [{
+                    values: counts,
+                    labels: ['Burglary','Larceny theft','Motor Vehicle theft','Arson', 'Murder and NNM', 'Rape', 'Robbery', 'Aggravated Assault'],
+                    textinfo: "label+percent",
+                    textposition: "outside",
+                    automargin: true,
+                    type: 'pie'
+                }];
+
+                var layout = {
+                    title:"<b>Proportions of Each Crime Type</b>",                
+                    height:400,
+                    width:400,
+                    showlegend: false,
+                    paper_bgcolor:"#f5f5f5",
+                };
+                Plotly.newPlot('pie', data, layout, {staticPlot: true});
+            </script>
+    </div>
+
+</div>
+
+
+</body>
+</html>

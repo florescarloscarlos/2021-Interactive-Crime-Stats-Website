@@ -1,0 +1,83 @@
+/*Grid Formatting for State Results Section*/
+.left { 
+    grid-area: left; 
+}
+.right { 
+    grid-area: right; 
+}
+
+.grid-container {
+    display: grid;
+    grid-template:
+      'left right';
+    grid-gap: 0;
+    padding: 10px;
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    margin: 0 auto; 
+    width: 72%;
+    position: relative;
+    background-color: whitesmoke;
+  }
+
+.grid-container > div {
+    text-align: left;
+    padding: 0;
+  }
+
+.city_search {
+    position:relative;
+    font-size: .8em;
+    font-weight: medium;
+}
+
+.results_title {
+    display: block;
+    margin:0;
+}
+
+h3.left_section_title {
+    margin-top: 20%;
+    margin-left: 0;
+}
+
+
+div.pie_chart {
+    width:100%;
+    margin: 2%;
+    margin-top: 0;
+    position:relative;
+}
+
+div.bar_chart {
+    width:100%;
+    margin: 2%;
+    position:relative;
+}
+.state {
+    width: 50%;
+}
+
+
+.google-map {
+    padding-bottom: 70%;
+    position: relative;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.return_button {
+    font-family: Verdana, Geneva, sans-serif; 
+    float:bottom;
+    display: block;
+    color: blue;
+    text-decoration: none;
+    text-align: left;
+    padding: 5px;
+}

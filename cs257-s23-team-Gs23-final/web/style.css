@@ -1,0 +1,181 @@
+
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: whitesmoke;
+}
+
+h1 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: rgb(64, 64, 233);
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+h1, h2,h3 {
+   font-family: Verdana, Geneva, sans-serif; 
+}
+
+figure {
+    margin-left:0;
+    position:relative;
+    top:-30px;
+}
+
+h3 {
+    text-align: left;
+    text-size-adjust: auto;
+    margin-left:12%;    
+}
+
+h3.dataTitle {
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 0;
+}
+
+p {
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.4;
+}
+
+
+img.US {
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    display:block;
+    width: 60%;
+    margin: 0;
+}
+
+div {
+    clear: left;
+    padding-bottom: 10px;
+}
+
+ul {
+    width: 85%;
+}
+
+li {
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 1.4;
+}
+
+
+div.content {
+    width: 80%;
+}
+
+div.highlight {
+    background-color: rgb(187, 213, 217);
+    width: 20%;
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    float: right;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+div.notableLocations {
+    /*background-color: rgb(193,218,223);*/
+    background-color: whitesmoke;
+    width: 20%;
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    float: right;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+div.questions {
+    background-color: whitesmoke;
+    width: 20%;
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    float: right;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    top: -25%;
+}
+
+
+nav.horizontalNav ul {
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    background-color: #bdc1c3;
+    list-style-type: none;
+    overflow: hidden;
+    width: 96%;
+}
+
+nav.horizontalNav li {
+    float: left;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+nav.horizontalNav li a {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+nav.horizontalNav li a:hover {
+    color: white;
+    background-color: blue;
+}
+
+nav.horizontalNav input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 10px;
+    margin-right: 16px;
+    font-size: 18px;
+  }
+
+
+
+div.verticalNav ul {
+    margin: 20px;
+    border: 3px solid rgb(65, 65, 65);
+    border-radius: 8px;
+    list-style-type: none;
+    padding: 0;
+    width: 140px;
+    height: 71%; /* Adjust the height as needed */
+    overflow-y: scroll; /* Add vertical scroll when necessary */
+    background-color: #f1f1f1;
+    float: left;
+}
+
+div.verticalNav li {
+    display:block;
+    font-size: 1em;
+    font-weight: medium;
+}
+
+div.verticalNav li a {
+    display: block;
+    color: blue;
+    text-decoration: none;
+    text-align: left;
+    padding: 5px;
+}
+
+div.verticalNav li a:hover {
+    color: white;
+    background-color: blue;
+}
+
+
